@@ -34,7 +34,7 @@
                 </li>
                 <li>
                     <div class="dropdown">
-                        <button class="dropbtn">Menu</button>
+                        <button class="dropbtn"><i class="fa fa-bars"></i></button>
                         <div class="dropdown-content">
                             <a href="#">Alarm</a>
                             <a href="#">Chats</a>

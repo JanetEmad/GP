@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2023 at 04:58 PM
+-- Generation Time: Feb 26, 2023 at 10:46 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -258,9 +258,8 @@ CREATE TABLE `pets` (
 
 INSERT INTO `pets` (`id`, `name`, `type`, `family`, `gender`, `age`, `image`, `user_id`) VALUES
 (17, 'Max', 'haski', 'dog', 'm', 2, 'Max.jpg', 14),
-(19, 'Kitty', 'siami', 'cat', 'f', 5, 'kitty.jpg', 14),
-(21, 'Rolly', 'haski', 'dog', 'm', 1, 'Rolly.jpeg', 14),
-(22, 'So', 'dodo', 'bird', 'f', 4, 'so.jpg', 14);
+(19, 'Kitty', 'siami', 'cat', 'f', 5, 'Kitty.jpg', 14),
+(21, 'Rolly', 'haski', 'dog', 'm', 1, 'Rolly.jpeg', 14);
 
 -- --------------------------------------------------------
 
@@ -662,13 +661,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `petreports`
 --
 ALTER TABLE `petreports`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -716,7 +715,7 @@ ALTER TABLE `trainers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `veterinaries`
