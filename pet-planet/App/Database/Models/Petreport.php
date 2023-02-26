@@ -85,7 +85,7 @@ class Petreport extends Model implements MakeCrud {
 
     public function read() :\mysqli_result
     {
-        return $this->connect->query("SELECT date,location,situation_description FROM petreports ORDER BY date");
+        return $this->connect->query("SELECT date,location,situation_description FROM petreports ORDER BY id DESC");
     }
 
     public function update() :bool

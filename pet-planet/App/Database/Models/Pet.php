@@ -48,14 +48,14 @@ class Pet extends Model implements MakeCrud {
 
     public function getPetInfo()
     {
-        $query = "SELECT * FROM pets WHERE image = ? ";
+        $query = "SELECT * FROM pets WHERE id = ? ";
 
         $returned_stmt = $this->connect->prepare($query);
         if(! $returned_stmt){
             return false;
         }
 
-        $returned_stmt->bind_param('s',$this->image);
+        $returned_stmt->bind_param('i',$this->id);
         $returned_stmt->execute();
         return $returned_stmt->get_result();
     }

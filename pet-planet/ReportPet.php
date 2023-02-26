@@ -10,12 +10,11 @@ include "layouts/navbarRegistered.php";
 include "App/Http/Middlewares/Auth.php";
 
 $validation = new Validation;
+$today_date = date("Y-m-d");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST) {
 
   $validation->setOldValues($_POST);
-
-  $validation->setInputValue($_POST['date'] ?? "")->setInputValueName('Date')->required();
 
   $validation->setInputValue($_POST['location'] ?? "")->setInputValueName('Location')->required();
 
@@ -25,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST) {
 
     $report = new Petreport;
 
-    $report->setDate($_POST['date'])
+    $report->setDate($today_date)
       ->setLocation($_POST['location'])
       ->setSituation_description($_POST['situation_desc']);
 
@@ -48,9 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST) {
     <?= $error ?? "" ?>
     <form class="reportpet-form2" method="post">
 
-      <label>date*</label>
-      <input type="date" name="date" value="<?= $validation->getOldValue('date') ?>">
-      <small><?= $validation->getMessage('Date') ?></small>
+      <label>Date</label>
+      <input type="date" name="date" value="<?= $today_date ?>" readonly>
 
       <label>Location*</label>
       <input class="i2" type="text" placeholder="Enter The Location Of The Pet..." name="location" value="<?= $validation->getOldValue('location') ?>" />

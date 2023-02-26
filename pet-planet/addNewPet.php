@@ -9,7 +9,6 @@ include "layouts/header.php";
 include "layouts/navbarRegistered.php";
 include "App/Http/Middlewares/Auth.php";
 
-
 $validation = new Validation;
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST) {
@@ -41,10 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST) {
       ->setImage($_POST['image'])
       ->setUser_id($_SESSION['user']->id);
 
-
-
     if ($pet->create()) {
-
       $databaseResult = $pet->setImage($_POST['image'])->getPetInfo();
       $databasePet = $databaseResult->fetch_object();
       $_SESSION['pet'] = $databasePet;
@@ -94,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST) {
       <br>
       <label for="image">Upload Pet Image*</label><br>
       <input class="i3" id="image" name="image" type="file" placeholder="Enter your Pet's age..." name="family" value="<?= $validation->getOldValue('family') ?>" />
-      <?= $validation->getMessage('family') ?>
+      <?= $validation->getMessage('image') ?>
 
       <div class="addButtons">
         <button class="newPet">Add</button>

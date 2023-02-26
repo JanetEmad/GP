@@ -20,7 +20,7 @@ use App\Database\Models\Pet;
                 $image = $_SESSION['user']->image;
             }
             ?>
-            <div class="pic"><img class="profilepic" style="cursor:pointer" src="assets/img/icons/<?= $image ?>" alt=""></div>
+            <div class="pic"><img class="profilepic" src="assets/img/icons/<?= $image ?>" alt=""></div>
             <div class="edit"><img src="assets/img/icons/edit.png"></div>
             <h4><?= $_SESSION['user']->first_name ?> <?= $_SESSION['user']->last_name ?></h4>
             <div class="inner">
@@ -46,7 +46,7 @@ use App\Database\Models\Pet;
             ?>
                 <div class="pets">
                     <?php foreach ($pets as $pet) { ?>
-                        <div class="pet">
+                        <div class="pet" onclick="location.href='petProfile.php?data=<?= $pet['id'] ?>'" style="cursor:pointer">
                             <div class="dog"><img class="dogpic" src="assets/img/pets/<?= $pet['image'] ?>"></div>
                             <h3 class="r"><?= $pet['name'] ?></h3>
                         </div>

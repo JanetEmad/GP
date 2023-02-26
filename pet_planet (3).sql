@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2023 at 08:09 AM
+-- Generation Time: Feb 26, 2023 at 04:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -230,15 +230,10 @@ CREATE TABLE `petreports` (
 --
 
 INSERT INTO `petreports` (`id`, `date`, `location`, `situation_description`) VALUES
-(1, '2023-02-23', 'ElHaram', 'inguired cat '),
-(2, '2022-02-15', 'dejhwgdue', 'efwegfyuwehf'),
-(3, '2023-02-03', 'vbikjnpo;l', 'nkljf;wemf'),
-(4, '2023-02-02', 'dnklW', 'DUQHDIOWhd'),
-(5, '2023-02-07', 'jnhfalfn', 'jlfjq;jf;w'),
-(6, '2023-02-03', 'lrkgpr', 'mkdp[qwkFP['),
-(7, '2023-02-11', 'wqdnw', 'qdhq'),
-(8, '2023-02-09', 'Misr elgdeda', 'cat is sick'),
-(9, '2023-02-04', 'faisal', 'dog is so sick');
+(1, '2023-02-02', 'El haram, Yehia shahin street', 'inguired cat '),
+(9, '2023-02-04', 'Cairo,Talaat Harb street', 'dog is so sick'),
+(10, '2023-02-18', 'Maadi, street 9', 'cat is sick'),
+(11, '2023-02-26', 'ElHegaz street, Heliopolis, cairo', 'homeless dog');
 
 -- --------------------------------------------------------
 
@@ -263,9 +258,9 @@ CREATE TABLE `pets` (
 
 INSERT INTO `pets` (`id`, `name`, `type`, `family`, `gender`, `age`, `image`, `user_id`) VALUES
 (17, 'Max', 'haski', 'dog', 'm', 2, 'Max.jpg', 14),
-(18, 'So', 'bb', 'bird', 'f', 3, 'so.jpg', 14),
 (19, 'Kitty', 'siami', 'cat', 'f', 5, 'kitty.jpg', 14),
-(21, 'Rolly', 'haski', 'dog', 'm', 1, 'Rolly.jpeg', 14);
+(21, 'Rolly', 'haski', 'dog', 'm', 1, 'Rolly.jpeg', 14),
+(22, 'So', 'dodo', 'bird', 'f', 4, 'so.jpg', 14);
 
 -- --------------------------------------------------------
 
@@ -405,7 +400,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `gender`, `phone`, `image`, `status`, `admin_status`, `service_provider_status`, `verification_code`, `email_verified_at`) VALUES
 (9, 'om', 'ma', 'omniamagdi21@gmail.com', '$2y$10$xyr2Hq/u/6rinU8UaeONP.YllfMF7JMrrrnvUlvrAOK.fAM2S1tfS', 'f', '01098184691', 'default.jpg', 1, 0, 0, 677521, NULL),
-(14, 'Janet', 'Emad', 'janetemad5@gmail.com', '$2y$10$NrlW.1tboxcrgWoXBOn0..TRbwiR6xYK/k82GEJyJ53hDvfIUdnM.', 'f', '01115953142', 'default.jpg', 1, 0, 0, 886396, '2023-02-23 04:38:57');
+(14, 'Janet', 'Emad', 'janetemad5@gmail.com', '$2y$10$NrlW.1tboxcrgWoXBOn0..TRbwiR6xYK/k82GEJyJ53hDvfIUdnM.', 'f', '01115953142', 'default.jpg', 1, 0, 0, 886396, '2023-02-23 04:38:57'),
+(27, 'Janet', 'Emad', 'jero2015emad@gmail.com', '$2y$10$U1jogUH7SsdxvJZy6rBNc.oWdt3pHibEooUssmg4sCkhCp2KJYnLK', 'f', '01115953141', 'default.jpg', 1, 0, 0, 280816, '2023-02-26 12:59:35');
 
 -- --------------------------------------------------------
 
@@ -667,13 +663,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `petreports`
 --
 ALTER TABLE `petreports`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -721,7 +717,7 @@ ALTER TABLE `trainers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `veterinaries`
