@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2023 at 04:48 PM
+-- Generation Time: Feb 26, 2023 at 04:58 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -400,8 +400,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `gender`, `phone`, `image`, `status`, `admin_status`, `service_provider_status`, `verification_code`, `email_verified_at`) VALUES
 (9, 'om', 'ma', 'omniamagdi21@gmail.com', '$2y$10$xyr2Hq/u/6rinU8UaeONP.YllfMF7JMrrrnvUlvrAOK.fAM2S1tfS', 'f', '01098184691', 'default.jpg', 1, 0, 0, 677521, NULL),
-(14, 'Janet', 'Emad', 'janetemad5@gmail.com', '$2y$10$NrlW.1tboxcrgWoXBOn0..TRbwiR6xYK/k82GEJyJ53hDvfIUdnM.', 'f', '01115953142', 'default.jpg', 1, 0, 0, 886396, '2023-02-23 04:38:57'),
-(27, 'Janet', 'Emad', 'jero2015emad@gmail.com', '$2y$10$U1jogUH7SsdxvJZy6rBNc.oWdt3pHibEooUssmg4sCkhCp2KJYnLK', 'f', '01115953141', 'default.jpg', 1, 0, 0, 280816, '2023-02-26 12:59:35');
+(14, 'Janet', 'Emad', 'janetemad5@gmail.com', '$2y$10$NrlW.1tboxcrgWoXBOn0..TRbwiR6xYK/k82GEJyJ53hDvfIUdnM.', 'f', '01115953142', 'default.jpg', 1, 0, 0, 886396, '2023-02-23 04:38:57');
 
 -- --------------------------------------------------------
 
