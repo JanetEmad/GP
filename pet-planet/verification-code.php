@@ -1,152 +1,148 @@
 <style type="text/css">
-        @media screen {
-            @font-face {
-                font-family: 'Lato';
-                font-style: normal;
-                font-weight: 400;
-                src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
-            }
-
-            @font-face {
-                font-family: 'Lato';
-                font-style: normal;
-                font-weight: 700;
-                src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
-            }
-
-            @font-face {
-                font-family: 'Lato';
-                font-style: italic;
-                font-weight: 400;
-                src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
-            }
-
-            @font-face {
-                font-family: 'Lato';
-                font-style: italic;
-                font-weight: 700;
-                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-            }
+    @media screen {
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
         }
 
-        /* CLIENT-SPECIFIC STYLES */
-        table,
-        td,
-        a {
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
         }
 
-        table,
-        td {
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
         }
 
-        img {
-            -ms-interpolation-mode: bicubic;
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
         }
+    }
 
-        /* RESET STYLES */
-        img {
-            border: 0;
-            height: auto;
-            line-height: 100%;
-            outline: none;
-            text-decoration: none;
-        }
+    /* CLIENT-SPECIFIC STYLES */
+    table,
+    td,
+    a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
 
-        table {
-            border-collapse: collapse !important;
-        }
+    table,
+    td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+    }
 
-        body {
-            height: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            width: 100% !important;
-        }
+    img {
+        -ms-interpolation-mode: bicubic;
+    }
 
-        /* iOS BLUE LINKS */
-        a[x-apple-data-detectors] {
-            color: inherit !important;
-            text-decoration: none !important;
-            font-size: inherit !important;
-            font-family: inherit !important;
-            font-weight: inherit !important;
-            line-height: inherit !important;
-        }
+    /* RESET STYLES */
+    img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+    }
 
-        /* MOBILE STYLES */
-        @media screen and (max-width:600px) {
-            h1 {
-                font-size: 32px !important;
-                line-height: 32px !important;
-            }
-        }
+    table {
+        border-collapse: collapse !important;
+    }
 
-        /* ANDROID CENTER FIX */
-        div[style*="margin: 16px 0;"] {
-            margin: 0 !important;
+    body {
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* iOS BLUE LINKS */
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+
+    /* MOBILE STYLES */
+    @media screen and (max-width:600px) {
+        h1 {
+            font-size: 32px !important;
+            line-height: 32px !important;
         }
-    </style>
+    }
+
+    /* ANDROID CENTER FIX */
+    div[style*="margin: 16px 0;"] {
+        margin: 0 !important;
+    }
+</style>
 <?php
 
 use App\Database\Models\User;
 use App\Http\Requests\Validation;
 
+
 $title = "Verification Code";
 
 include "layouts/header.php";
 include "layouts/navbar.php";
+include "App/Http/Middlewares/guest.php";
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST){
 
-  $validation = new Validation;
+if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST) {
 
-  $validation-> setInputValue($_POST['verification_code'])-> setInputValueName('verification code')-> required()-> digits(6);
+    $validation = new Validation;
 
-  if(empty($validation->getErrors())){
+    $validation->setInputValue($_POST['verification_code'])->setInputValueName('verification code')->required()->digits(6);
 
-    $user = new User;
+    if (empty($validation->getErrors())) {
 
-    $user-> setVerification_code($_POST['verification_code']) ->setEmail($_SESSION['verification_email']);
-    $result = $user->codeVerification() ;
+        $user = new User;
 
-    if($result == false){
+        $user->setVerification_code($_POST['verification_code'])->setEmail($_SESSION['verification_email']);
+        $result = $user->codeVerification();
 
-      $error = "<div class='alert alert-danger'> Something went wrong </div>";
+        if ($result == false) {
 
-    }
-    else{
+            $error = "<div class='alert alert-danger'> Something went wrong </div>";
+        } else {
 
-      if($result->num_rows == 1){
+            if ($result->num_rows == 1) {
 
-        $user->setEmail_verified_at(date('Y-m-d H:i:s'));
-        if($user->verifyUser()){
+                $user->setEmail_verified_at(date('Y-m-d H:i:s'));
+                if ($user->verifyUser()) {
 
-          unset($_SESSION['verification_email']);
-          
-          $success = "<div class='alert alert-success text-center'> Correct Code You Will be redirected to sign in page shotrly ... </div>";
-          header('refresh:4;url=signin.php');
+                    unset($_SESSION['verification_email']);
 
-        }else{
+                    $success = "<div class='alert alert-success text-center'> Correct Code You Will be redirected to sign in page shotrly ... </div>";
+                    header('refresh:4;url=signin.php');
+                } else {
 
-          $error = "<div class='alert alert-danger'> Something went wrong </div>";
+                    $error = "<div class='alert alert-danger'> Something went wrong </div>";
+                }
+            } else {
 
+                $error = "<div class='alert alert-danger'> Wrong Code </div>";
+            }
         }
-
-      }
-      else{
-
-        $error = "<div class='alert alert-danger'> Wrong Code </div>";
-
-      }
     }
-    
-  }
 }
 ?>
+
 <body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
     <!-- HIDDEN PREHEADER TEXT -->
     <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> We're thrilled to have you here! Get ready to dive into your new account.
@@ -189,16 +185,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST){
                                         <table border="0" cellspacing="0" cellpadding="0">
                                             <tr>
 
-<!-- -->
-                                            <?= $error ?? "" ?>
-                                            <?= $success ?? "" ?>
-                                            <form action="#" method="post">
-                                            <input type="number" name="verification_code" placeholder="Verification Code" style="height:50px;" />
-                                            <?= isset($validation) ? $validation->getMessage('verification code') : '' ?>
-                                            <div class="button-box">
-                                            <button type="submit" style="margin-top:20px; height:50px;width:180px;border:transparent;background:blue;color:white;font-weight: bold;"><span>Verify</span></button>
-                                            </div>
-                                            </form>
+                                                <!-- -->
+                                                <?= $error ?? "" ?>
+                                                <?= $success ?? "" ?>
+                                                <form action="#" method="post">
+                                                    <input type="number" name="verification_code" placeholder="Verification Code" style="height:50px;" />
+                                                    <?= isset($validation) ? $validation->getMessage('verification code') : '' ?>
+                                                    <div class="button-box">
+                                                        <button type="submit" style="margin-top:20px; height:50px;width:180px;border:transparent;background:blue;color:white;font-weight: bold;"><span>Verify</span></button>
+                                                    </div>
+                                                </form>
                                             </tr>
                                         </table>
                                     </td>
@@ -206,8 +202,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST){
                             </table>
                         </td>
                     </tr>
-                
-    </table>
+
+                </table>
 </body>
 
 </html>

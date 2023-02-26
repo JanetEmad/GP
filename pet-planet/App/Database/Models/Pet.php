@@ -16,8 +16,7 @@ class Pet extends Model implements MakeCrud {
     
     public function create() :bool
     { 
-        $query = "INSERT INTO pets (name,type,
-        family,gender,age,image,user_id) 
+        $query = "INSERT INTO pets (name,type,family,age,gender,image,user_id) 
         
         VALUES (? , ? , ? , ? , ? , ? , ? )";
         
@@ -26,9 +25,8 @@ class Pet extends Model implements MakeCrud {
             return false;
         }
         
-        $returned_stmt->bind_param('ssssisi',$this->name,$this->type,$this->family,
-        $this->gender, $this->age, $this->image,
-        $this->user_id);
+        $returned_stmt->bind_param('sssissi',$this->name,$this->type,$this->family,
+        $this->age, $this->gender, $this->image,$this->user_id);
 
         return $returned_stmt->execute();
     }
@@ -50,16 +48,32 @@ class Pet extends Model implements MakeCrud {
 
     public function getPetInfo()
     {
-        $query = "SELECT * FROM pets WHERE id = ? ";
+        $query = "SELECT * FROM pets WHERE image = ? ";
 
         $returned_stmt = $this->connect->prepare($query);
         if(! $returned_stmt){
             return false;
         }
 
-        $returned_stmt->bind_param('i',$this->id);
+        $returned_stmt->bind_param('s',$this->image);
         $returned_stmt->execute();
         return $returned_stmt->get_result();
+    }
+
+    public function get()
+    {
+        $query = "SELECT
+                    `pets`.*
+                FROM
+                    `pets`
+                JOIN `users`
+                ON `users`.`id` = `pets`.`user_id`
+                WHERE
+                    `user_id` = ?";
+        $stmt = $this->connect->prepare($query);
+        $stmt->bind_param('i',$this->user_id);
+        $stmt->execute();
+        return $stmt->get_result();
     }
 
     /**
@@ -222,4 +236,3 @@ class Pet extends Model implements MakeCrud {
         return $this;
     }
 }
-?>

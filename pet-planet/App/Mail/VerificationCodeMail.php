@@ -1,9 +1,12 @@
-<?php 
+<?php
+
 namespace App\Mail;
+
 use PHPMailer\PHPMailer\Exception;
 
-class VerificationCodeMail extends Mail {
-    public function send($mailTo,$subject,$body) :bool
+class VerificationCodeMail extends Mail
+{
+    public function send($mailTo, $subject, $body): bool
     {
         try {
             $this->mail->setFrom(self::MAILUSERNAME, 'Pet planet Team');
@@ -14,10 +17,9 @@ class VerificationCodeMail extends Mail {
             $this->mail->send();
             // echo 'Message has been sent';
             return true;
-           }catch(Exception $e){
+        } catch (Exception $e) {
             // echo "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
             return false;
-
-         }
+        }
     }
 }

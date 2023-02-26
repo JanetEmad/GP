@@ -9,4 +9,3 @@ interface MakeCrud {
     function update()  :bool;
     function delete()  :bool;
 }
-?>

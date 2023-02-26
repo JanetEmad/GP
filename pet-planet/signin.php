@@ -7,57 +7,59 @@ $title = "Signin";
 
 include "layouts/header.php";
 include "layouts/navbar.php";
+include "App/Http/Middlewares/guest.php";
 
- $validation = new Validation;
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST){
+$validation = new Validation;
 
-    $validation-> setInputValue($_POST['email'])-> setInputValueName('email')-> required()-> regex('/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/',"wrong email or password")-> exists('users','email');
-    
-    $validation->setInputValue($_POST['password'])-> setInputValueName('password')-> required()-> regex('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,32}$/',"wrong email or password");
-    
-    if(empty($validation->getErrors())){
+if ($_SERVER['REQUEST_METHOD'] == "POST" && $_POST) {
 
-      $user = new User;
-      
-      $databaseResult = $user-> setEmail($_POST['email'])-> getUserInfo();
-      
-      if($databaseResult-> num_rows == 1){
+  $validation->setInputValue($_POST['email'])->setInputValueName('email')->required()->regex('/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/', "wrong email or password")->exists('users', 'email');
 
-        $databaseUser = $databaseResult-> fetch_object();
+  $validation->setInputValue($_POST['password'])->setInputValueName('password')->required()->regex('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,32}$/', "wrong email or password");
 
-        if( password_verify($_POST['password'],$databaseUser->password)){
+  if (empty($validation->getErrors())) {
 
-            if(is_null($databaseUser-> email_verified_at)){
+    $user = new User;
 
-              $_SESSION['verication_email'] = $_POST['email'];
-              header('location:verification-code.php');die;
-            }else{
-              $_SESSION['user'] = $databaseUser;
-              header('location:CustomerHome.php');die;
-            }
-        }else{
-          $error = "<p class='text-danger font-weight-bold'>wrong email or password</p>";
+    $databaseResult = $user->setEmail($_POST['email'])->getUserInfo();
+
+    if ($databaseResult->num_rows == 1) {
+
+      $databaseUser = $databaseResult->fetch_object();
+
+      if (password_verify($_POST['password'], $databaseUser->password)) {
+
+        if (is_null($databaseUser->email_verified_at)) {
+
+          $_SESSION['verication_email'] = $_POST['email'];
+          header('location:verification-code.php');
+          die;
+        } else {
+          $_SESSION['user'] = $databaseUser;
+          header('location:CustomerHome.php');
+          die;
         }
-
-      }
-      else{
+      } else {
         $error = "<p class='text-danger font-weight-bold'>wrong email or password</p>";
       }
+    } else {
+      $error = "<p class='text-danger font-weight-bold'>wrong email or password</p>";
     }
+  }
 }
- ?>
+?>
 
-<div class="login-page">
+<div class="signin-page">
   <div class="form">
-    <div class="login">
-      <div class="login-header">
+    <div class="signin">
+      <div class="signin-header">
         <h3 style="text-align:center;">Sign In</h3>
       </div>
     </div>
 
-    <?=  $error ?? "" ?>
-    <form class="login-form" action="#" method="post">
+    <?= $error ?? "" ?>
+    <form class="signin-form" action="#" method="post">
 
       <label for="email">Email*</label>
       <input id="email" type="text" placeholder="Enter your email..." name="email" />
@@ -67,7 +69,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST){
       <input id="password" type="password" placeholder="Enter your password..." name="password" />
       <?= $validation->getMessage('password') ?>
 
-     <!-- <div class="button-box">
+      <!-- <div class="button-box">
                       <div class="login-toggle-btn">
                         <input type="checkbox" />
                         <label>Remember me</label>
@@ -81,5 +83,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST){
   </div>
 </div>
 <div class="images">
-  <img class="image" src="assets/img/logo/Screenshot 2023-02-23 111004.jpg" alt="">
+  <img class="signinimage" src="assets/img/other/signinPhoto.jpg" alt="">
 </div>

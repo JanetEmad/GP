@@ -1,16 +1,20 @@
 <?php
+
 namespace App\Mail;
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-abstract class Mail {
+abstract class Mail
+{
     protected const MAILHOST = 'smtp-mail.outlook.com';
     protected const MAILUSERNAME = '';
     protected const MAILPASSWORD = '';
     protected const MAILPORT = 587;
     protected const MAILENCRYPTION = PHPMailer::ENCRYPTION_STARTTLS;
     protected PHPMailer $mail;
-    public function __construct() {
+    public function __construct()
+    {
         $this->mail = new PHPMailer(true);
         $this->mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
         $this->mail->isSMTP();                                            //Send using SMTP
@@ -22,5 +26,5 @@ abstract class Mail {
         $this->mail->Port       = self::MAILPORT;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     }
 
-    public abstract function send($mailTo,$subject,$body) :bool;
+    public abstract function send($mailTo, $subject, $body): bool;
 }
